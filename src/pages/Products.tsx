@@ -26,19 +26,21 @@ export default function Products() {
     }));
   };
 
+  const [showMobileFilters, setShowMobileFilters] = useState(false);
+
   return (
     <div className="pt-24 bg-gray-50 min-h-screen">
       {/* Catálogo de Produtos Section */}
-      <section className="py-16">
+      <section className="py-12 md:py-16">
         <div className="container mx-auto px-4 max-w-7xl">
           
-          <div className="mb-10">
-            <h1 className="text-4xl font-extrabold text-[#0B1D3A] mb-4">Catálogo de Produtos</h1>
-            <p className="text-gray-500 text-lg">Encontre tudo o que você precisa para sua obra.</p>
+          <div className="mb-8 md:mb-10 text-center md:text-left">
+            <h1 className="text-3xl md:text-4xl font-extrabold text-[#0B1D3A] mb-4">Catálogo de Produtos</h1>
+            <p className="text-gray-500 text-base md:text-lg">Encontre tudo o que você precisa para sua obra.</p>
           </div>
 
           {/* Categories Top Bar */}
-          <div className="flex items-center justify-between overflow-x-auto pb-4 gap-8 scrollbar-hide">
+          <div className="flex items-center gap-4 md:gap-8 overflow-x-auto pb-6 -mx-4 px-4 md:mx-0 md:px-0 scrollbar-hide">
             {[
               { name: 'Básico', icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M11.55 3.006h.59c2.784 1.012 5.567 2.024 8.328 3.053c.254.09.428.315.53.675v5.713L12.45 21h-.602l-8.334-3.048c-.225-.078-.393-.309-.511-.68V11.57L11.55 3z"/><path fill="currentColor" d="m19.872 6.97l-7.675 7.733a5 5 0 0 0-.32-.017a.9.9 0 0 1-.31-.057a536 536 0 0 1-6.934-2.513c-.224-.085-.32-.242-.303-.461l7.524-7.513a.2.2 0 0 1 .09-.05a.2.2 0 0 1 .1.005l7.828 2.868z"/><path fill="currentColor" d="M13.845 9.158c-1.136-.782-1.27-2.103-1.406-2.508a3.52 3.52 0 0 1 2.424.112c.91.366 1.158 1.266.365 1.918a2.05 2.05 0 0 1-1.383.478"/><path fill="currentColor" d="M12.434 6.65a3.7 3.7 0 0 0 1.704 2.13a.17.17 0 0 1 .084.147a.17.17 0 0 1-.079.14a.6.6 0 0 1-.292.09c-.928.102-3.003-.483-2.317-1.765c.158-.304.461-.546.9-.742m7.439.303v4.841c0 .17.017.327-.101.44L12 19.891v-5.19zm-8.716 5.218c-1.012-.691-1.642-1.495-1.9-2.406a3.06 3.06 0 0 1 2.277.056c.99.422 1.35 1.383.292 2.075c-.315.202-.54.298-.664.28z"/><path fill="currentColor" d="M9.256 9.765q.388 1.366 1.906 2.413q-1.382.337-2.4-.304c-1.058-.658-.524-1.766.494-2.109m-4.92 1.889q-.025.337.304.46a554 554 0 0 0 6.928 2.509q.142.058.309.056H12v5.213c-2.548-.94-5.252-1.89-7.766-2.784c-.146-.056-.107-.157-.107-.309v-4.802c0-.124.011-.236.208-.343"/></svg> },
               { name: 'Acabamento', icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512"><path fill="currentColor" fillRule="evenodd" d="M234.667 64H64v170.667h170.667zM448 64H277.333v170.667H448zM64 277.333h170.667V448H64zm384 0H277.333V448H448z" clipRule="evenodd"/></svg> },
@@ -52,27 +54,38 @@ export default function Products() {
               <button 
                 key={idx} 
                 onClick={() => setActiveCategory(cat.name)}
-                className="flex flex-col items-center gap-3 min-w-[80px] group cursor-pointer"
+                className="flex flex-col items-center gap-2 min-w-[70px] md:min-w-[80px] group cursor-pointer"
               >
-                <div className={`w-14 h-14 rounded-full border shadow-sm flex items-center justify-center transition-colors p-2 ${
+                <div className={`w-12 h-12 md:w-14 md:h-14 rounded-full border shadow-sm flex items-center justify-center transition-all p-2 ${
                   activeCategory === cat.name 
-                    ? 'bg-[#0B1D3A] border-[#0B1D3A] text-white' 
+                    ? 'bg-[#0B1D3A] border-[#0B1D3A] text-white scale-110' 
                     : 'bg-white border-gray-200 text-gray-400 group-hover:border-[#FFB300] group-hover:text-[#FFB300]'
                 }`}>
                   {cat.icon}
                 </div>
-                <span className={`text-sm font-bold transition-colors ${
+                <span className={`text-[10px] md:text-sm font-bold transition-colors ${
                   activeCategory === cat.name ? 'text-[#0B1D3A]' : 'text-gray-500 group-hover:text-[#0B1D3A]'
                 }`}>{cat.name}</span>
               </button>
             ))}
           </div>
 
-          <div className="flex flex-col lg:flex-row gap-8 mt-12">
+          {/* Mobile Filter Toggle */}
+          <div className="lg:hidden mt-4">
+            <button 
+              onClick={() => setShowMobileFilters(!showMobileFilters)}
+              className="w-full flex items-center justify-center gap-2 bg-white border border-gray-200 py-3 rounded-xl font-bold text-[#0B1D3A] shadow-sm"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+              {showMobileFilters ? 'Ocultar Filtros' : 'Mostrar Filtros'}
+            </button>
+          </div>
+
+          <div className="flex flex-col lg:flex-row gap-8 mt-8 md:mt-12">
             
             {/* Sidebar Filters */}
-            <div className="w-full lg:w-1/4">
-              <div className="bg-white rounded-2xl border border-gray-200 p-6 sticky top-24">
+            <div className={`w-full lg:w-1/4 ${showMobileFilters ? 'block' : 'hidden lg:block'}`}>
+              <div className="bg-white rounded-2xl border border-gray-200 p-6 lg:sticky lg:top-24">
                 <div className="flex items-center justify-between mb-6">
                   <h3 className="font-extrabold text-[#0B1D3A] text-lg">Filtros</h3>
                   <button className="text-sm font-bold text-[#FFB300] hover:text-[#e5a100] cursor-pointer">Limpar tudo</button>

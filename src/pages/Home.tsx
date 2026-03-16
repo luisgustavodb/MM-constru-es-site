@@ -42,30 +42,29 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <section 
-        className="relative bg-[#0B1D3A] text-white overflow-hidden bg-cover bg-center"
-        style={{ backgroundImage: 'url("https://i.postimg.cc/gJvnT6k4/fundo.jpg")' }}
+        className="relative bg-[#0B1D3A] text-white overflow-hidden bg-cover bg-center bg-[url('https://i.postimg.cc/5yd5jk36/Gemini-Generated-Image-mfcqgmmfcqgmmfcq.png')] md:bg-[url('https://i.postimg.cc/gJvnT6k4/fundo.jpg')]"
       >
-        <div className="container mx-auto px-4 pt-36 pb-36 md:pt-48 md:pb-56 relative z-10">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="container mx-auto px-4 pt-32 pb-24 md:pt-48 md:pb-56 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             
             {/* Left: Text Content */}
-            <div className="max-w-xl">
-              <div className="inline-block bg-[#061225]/60 backdrop-blur-md border border-white/20 text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
+            <div className="max-w-xl text-center md:text-left">
+              <div className="inline-block bg-[#061225]/60 backdrop-blur-md border border-white/20 text-white text-[10px] md:text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
                 A base forte para sua obra
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] mb-6 uppercase tracking-tight">
-                Construímos <br/>
-                <span className="text-[#FFB300]">seus sonhos</span> <br/>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] mb-6 uppercase tracking-tight">
+                Construímos <br className="hidden sm:block"/>
+                <span className="text-[#FFB300]">seus sonhos</span> <br className="hidden sm:block"/>
                 com segurança.
               </h1>
-              <p className="text-blue-100 text-lg mb-8 max-w-md font-medium leading-relaxed">
+              <p className="text-blue-100 text-base md:text-lg mb-8 max-w-md mx-auto md:mx-0 font-medium leading-relaxed">
                 Materiais de alta qualidade e resistência. Do alicerce ao acabamento, a MM Construções é a sua parceira de confiança para obras e reformas.
               </p>
-              <div className="flex flex-wrap gap-4">
-                <Link to="/produtos" className="cursor-pointer bg-[#FFB300] text-[#0B1D3A] px-[33px] py-[16px] rounded-[9px] font-extrabold text-lg uppercase tracking-wide flex items-center gap-2 transition-all duration-[400ms] hover:shadow-[7px_5px_56px_-14px_#FFB300] active:scale-[0.97] active:shadow-[7px_5px_56px_-10px_#FFB300]">
+              <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
+                <Link to="/produtos" className="w-full sm:w-auto cursor-pointer bg-[#FFB300] text-[#0B1D3A] px-[33px] py-[16px] rounded-[9px] font-extrabold text-lg uppercase tracking-wide flex items-center justify-center gap-2 transition-all duration-[400ms] hover:shadow-[7px_5px_56px_-14px_#FFB300] active:scale-[0.97] active:shadow-[7px_5px_56px_-10px_#FFB300]">
                   Ver Ofertas <ArrowRight size={20} />
                 </Link>
-                <Link to="/contato" className="relative inline-block cursor-pointer outline-none border-0 align-middle bg-transparent p-0 w-[15rem] h-[3.5rem] group">
+                <Link to="/contato" className="relative inline-block cursor-pointer outline-none border-0 align-middle bg-transparent p-0 w-full sm:w-[15rem] h-[3.5rem] group">
                   <span className="transition-all duration-[450ms] ease-[cubic-bezier(0.65,0,0.076,1)] relative block m-0 w-[3.5rem] h-[3.5rem] bg-[#FFB300] rounded-full group-hover:w-full" aria-hidden="true">
                     <span className="transition-all duration-[450ms] ease-[cubic-bezier(0.65,0,0.076,1)] absolute top-0 bottom-0 m-auto left-[1.15rem] w-[1.125rem] h-[0.125rem] bg-transparent group-hover:bg-[#0B1D3A] group-hover:translate-x-4">
                       <span className="absolute top-[-0.29rem] right-[0.0625rem] w-[0.625rem] h-[0.625rem] border-t-[0.125rem] border-r-[0.125rem] border-[#0B1D3A] rotate-45"></span>
@@ -106,10 +105,10 @@ export default function Home() {
         <div className="container mx-auto px-4 max-w-6xl">
           
           {/* Our Mission Block */}
-          <div className="flex flex-col md:flex-row items-center gap-16 md:gap-24 mb-32">
+          <div className="flex flex-col md:flex-row items-center gap-12 md:gap-24 mb-24 md:mb-32">
             {/* Images Left */}
             <div className="w-full md:w-1/2 relative flex justify-start drop-shadow-2xl">
-              <div className="w-[85%] aspect-[4/5] rounded-l-3xl overflow-hidden relative [clip-path:polygon(0_0,100%_0,85%_100%,0_100%)]">
+              <div className="w-full md:w-[85%] aspect-[4/5] rounded-3xl md:rounded-l-3xl md:rounded-r-none overflow-hidden relative md:[clip-path:polygon(0_0,100%_0,85%_100%,0_100%)]">
                 <img 
                   src="https://i.postimg.cc/kgYysLB2/imagem-sobre-nos-1.jpg" 
                   alt="Nossa Missão" 
@@ -120,12 +119,12 @@ export default function Home() {
             </div>
 
             {/* Text Right */}
-            <div className="w-full md:w-1/2 mt-16 md:mt-0">
-              <h2 className="text-4xl md:text-5xl font-extrabold text-[#0B1D3A] mb-6 tracking-tight">Nossa Missão</h2>
-              <p className="text-slate-600 text-lg mb-8 leading-relaxed font-medium">
+            <div className="w-full md:w-1/2 text-center md:text-left">
+              <h2 className="text-3xl md:text-5xl font-extrabold text-[#0B1D3A] mb-6 tracking-tight">Nossa Missão</h2>
+              <p className="text-slate-600 text-base md:text-lg mb-8 leading-relaxed font-medium">
                 Fornecer os melhores materiais de construção com excelência no atendimento, garantindo que cada cliente encontre tudo o que precisa para sua obra ou reforma. Nosso objetivo é ser a base de confiança para projetos duradouros, oferecendo qualidade, variedade e preços justos.
               </p>
-              <ul className="space-y-4">
+              <ul className="space-y-4 inline-block md:block text-left">
                 {[
                   'Variedade e Qualidade Garantida',
                   'Atendimento Especializado',
@@ -133,8 +132,8 @@ export default function Home() {
                   'Parceria com as Melhores Marcas'
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-center gap-3 text-slate-700 font-bold">
-                    <CheckCircle2 className="text-[#008a44] flex-shrink-0" size={24} />
-                    {item}
+                    <CheckCircle2 className="text-[#008a44] flex-shrink-0" size={20} />
+                    <span className="text-sm md:text-base">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -142,14 +141,14 @@ export default function Home() {
           </div>
 
           {/* Our Vision Block */}
-          <div className="flex flex-col-reverse md:flex-row items-center gap-16 md:gap-24">
+          <div className="flex flex-col-reverse md:flex-row items-center gap-12 md:gap-24">
             {/* Text Left */}
-            <div className="w-full md:w-1/2 mt-16 md:mt-0">
-              <h2 className="text-4xl md:text-5xl font-extrabold text-[#0B1D3A] mb-6 tracking-tight">Nossa Visão</h2>
-              <p className="text-slate-600 text-lg mb-8 leading-relaxed font-medium">
+            <div className="w-full md:w-1/2 text-center md:text-left">
+              <h2 className="text-3xl md:text-5xl font-extrabold text-[#0B1D3A] mb-6 tracking-tight">Nossa Visão</h2>
+              <p className="text-slate-600 text-base md:text-lg mb-8 leading-relaxed font-medium">
                 Na MM Construções, nossa visão é ser a loja de referência em materiais de construção da região, reconhecida pela inovação no varejo e pelo compromisso com o sucesso de cada obra. Queremos facilitar o processo de construir e reformar, entregando valor e praticidade do alicerce ao acabamento.
               </p>
-              <ul className="space-y-4">
+              <ul className="space-y-4 inline-block md:block text-left">
                 {[
                   'Referência em Varejo da Construção',
                   'Soluções Práticas para sua Obra',
@@ -157,8 +156,8 @@ export default function Home() {
                   'Crescimento Sustentável e Responsável'
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-center gap-3 text-slate-700 font-bold">
-                    <CheckCircle2 className="text-[#008a44] flex-shrink-0" size={24} />
-                    {item}
+                    <CheckCircle2 className="text-[#008a44] flex-shrink-0" size={20} />
+                    <span className="text-sm md:text-base">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -166,7 +165,7 @@ export default function Home() {
 
             {/* Images Right */}
             <div className="w-full md:w-1/2 relative flex justify-end drop-shadow-2xl">
-              <div className="w-[85%] aspect-[4/5] rounded-r-3xl overflow-hidden relative [clip-path:polygon(15%_0,100%_0,100%_100%,0_100%)]">
+              <div className="w-full md:w-[85%] aspect-[4/5] rounded-3xl md:rounded-r-3xl md:rounded-l-none overflow-hidden relative md:[clip-path:polygon(15%_0,100%_0,100%_100%,0_100%)]">
                 <img 
                   src="https://i.postimg.cc/Njn1mTzx/imagem-sobre-nos-2.jpg" 
                   alt="Nossa Visão" 
@@ -269,42 +268,42 @@ export default function Home() {
       </section>
 
       {/* Por que a MM Section */}
-      <section className="bg-[#f4f7fb] py-24 border-t border-gray-100">
+      <section className="bg-[#f4f7fb] py-16 md:py-24 border-t border-gray-100">
         <div className="container mx-auto px-4 max-w-5xl text-center">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-[#0B1D3A] mb-6 tracking-tight">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-[#0B1D3A] mb-6 tracking-tight">
             Por que a MM Construções?
           </h2>
-          <p className="text-slate-600 text-lg md:text-xl mb-20 max-w-3xl mx-auto leading-relaxed font-medium">
+          <p className="text-slate-600 text-base md:text-xl mb-12 md:mb-20 max-w-3xl mx-auto leading-relaxed font-medium">
             Unimos tradição, qualidade e os melhores preços para ser a sua parceira ideal. Nossa estrutura garante que sua obra não pare, com materiais de ponta e entrega ágil.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 mb-20">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 md:gap-8 mb-16 md:mb-20">
             {/* Stat 1 */}
             <div className="flex flex-col items-center">
-              <span className="text-6xl md:text-7xl font-black mb-3 tracking-tighter text-[#0B1D3A]">
+              <span className="text-5xl md:text-7xl font-black mb-3 tracking-tighter text-[#0B1D3A]">
                 15 Anos
               </span>
-              <span className="text-slate-600 font-medium text-lg">de experiência no mercado</span>
+              <span className="text-slate-600 font-medium text-base md:text-lg">de experiência no mercado</span>
             </div>
             
             {/* Stat 2 */}
             <div className="flex flex-col items-center">
-              <span className="text-6xl md:text-7xl font-black mb-3 tracking-tighter text-[#0B1D3A]">
+              <span className="text-5xl md:text-7xl font-black mb-3 tracking-tighter text-[#0B1D3A]">
                 +10 Mil
               </span>
-              <span className="text-slate-600 font-medium text-lg">clientes satisfeitos atendidos</span>
+              <span className="text-slate-600 font-medium text-base md:text-lg">clientes satisfeitos atendidos</span>
             </div>
 
             {/* Stat 3 */}
             <div className="flex flex-col items-center">
-              <span className="text-6xl md:text-7xl font-black mb-3 tracking-tighter text-[#0B1D3A]">
+              <span className="text-5xl md:text-7xl font-black mb-3 tracking-tighter text-[#0B1D3A]">
                 +5.000
               </span>
-              <span className="text-slate-600 font-medium text-lg">itens disponíveis em estoque</span>
+              <span className="text-slate-600 font-medium text-base md:text-lg">itens disponíveis em estoque</span>
             </div>
           </div>
 
-          <Link to="/contato" className="inline-flex items-center justify-center gap-2 cursor-pointer bg-[#FFB300] text-[#0B1D3A] px-[32px] py-[14px] rounded-[9px] font-extrabold text-sm uppercase tracking-wide transition-all duration-[400ms] hover:shadow-[7px_5px_56px_-14px_#FFB300] active:scale-[0.97] active:shadow-[7px_5px_56px_-10px_#FFB300]">
+          <Link to="/contato" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 cursor-pointer bg-[#FFB300] text-[#0B1D3A] px-[32px] py-[14px] rounded-[9px] font-extrabold text-sm uppercase tracking-wide transition-all duration-[400ms] hover:shadow-[7px_5px_56px_-14px_#FFB300] active:scale-[0.97] active:shadow-[7px_5px_56px_-10px_#FFB300]">
             Faça um Orçamento
           </Link>
         </div>
@@ -358,29 +357,29 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-white">
+      <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 max-w-6xl">
-          <div className="relative bg-[#0B1D3A] rounded-[2rem] overflow-hidden shadow-2xl">
+          <div className="relative bg-[#0B1D3A] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden shadow-2xl">
             {/* Background Image */}
             <div 
               className="absolute inset-0 w-full h-full bg-cover bg-center opacity-20 pointer-events-none"
               style={{ backgroundImage: 'url("https://i.postimg.cc/KjSHDj0M/Uma-foto-de-uma-reforma-em-uma-cozinha-2k-delpmaspu.jpg")' }}
             ></div>
 
-            <div className="relative z-10 p-12 md:p-20 flex flex-col md:flex-row items-center justify-between gap-12">
+            <div className="relative z-10 p-8 md:p-20 flex flex-col md:flex-row items-center justify-between gap-12">
               <div className="max-w-2xl text-center md:text-left">
-                <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">
+                <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">
                   Pronto para começar sua obra?
                 </h2>
-                <p className="text-blue-100 text-lg md:text-xl font-medium leading-relaxed mb-10">
+                <p className="text-blue-100 text-base md:text-xl font-medium leading-relaxed mb-10">
                   Temos tudo o que você precisa, do alicerce ao acabamento. Fale com nossos especialistas e garanta os melhores materiais com entrega rápida.
                 </p>
                 
-                <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-                  <Link to="/produtos" className="cursor-pointer bg-[#FFB300] text-[#0B1D3A] px-[33px] py-[16px] rounded-[9px] font-extrabold text-lg uppercase tracking-wide flex items-center gap-2 transition-all duration-[400ms] hover:shadow-[7px_5px_56px_-14px_#FFB300] active:scale-[0.97] active:shadow-[7px_5px_56px_-10px_#FFB300]">
+                <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
+                  <Link to="/produtos" className="w-full sm:w-auto cursor-pointer bg-[#FFB300] text-[#0B1D3A] px-[33px] py-[16px] rounded-[9px] font-extrabold text-lg uppercase tracking-wide flex items-center justify-center gap-2 transition-all duration-[400ms] hover:shadow-[7px_5px_56px_-14px_#FFB300] active:scale-[0.97] active:shadow-[7px_5px_56px_-10px_#FFB300]">
                     Ver Ofertas <ArrowRight size={20} />
                   </Link>
-                  <Link to="/contato" className="relative inline-block cursor-pointer outline-none border-0 align-middle bg-transparent p-0 w-[15rem] h-[3.5rem] group">
+                  <Link to="/contato" className="relative inline-block cursor-pointer outline-none border-0 align-middle bg-transparent p-0 w-full sm:w-[15rem] h-[3.5rem] group">
                     <span className="transition-all duration-[450ms] ease-[cubic-bezier(0.65,0,0.076,1)] relative block m-0 w-[3.5rem] h-[3.5rem] bg-[#FFB300] rounded-full group-hover:w-full" aria-hidden="true">
                       <span className="transition-all duration-[450ms] ease-[cubic-bezier(0.65,0,0.076,1)] absolute top-0 bottom-0 m-auto left-[1.15rem] w-[1.125rem] h-[0.125rem] bg-transparent group-hover:bg-[#0B1D3A] group-hover:translate-x-4">
                         <span className="absolute top-[-0.29rem] right-[0.0625rem] w-[0.625rem] h-[0.625rem] border-t-[0.125rem] border-r-[0.125rem] border-[#0B1D3A] rotate-45"></span>
