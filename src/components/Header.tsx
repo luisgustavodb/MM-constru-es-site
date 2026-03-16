@@ -35,30 +35,30 @@ export default function Header() {
       {/* HEADER PRINCIPAL */}
       <header className="fixed top-0 left-0 w-full z-[60] bg-[#0B1D3A]/80 backdrop-blur-md shadow-xl border-b border-white/5">
         {/* Faixa Superior */}
-        <div className="bg-[#061225] py-1.5 px-4 text-center">
-          <p className="text-[9px] md:text-xs font-bold text-blue-200 uppercase tracking-[0.2em]">
+        <div className="bg-[#061225] py-1 px-4 text-center">
+          <p className="text-[8px] md:text-[10px] font-bold text-blue-200 uppercase tracking-[0.2em]">
             Entregas rápidas para toda a região • MM Construções
           </p>
         </div>
 
         {/* Barra de Navegação */}
-        <div className="container mx-auto px-4 h-16 md:h-20 flex items-center justify-between relative">
+        <div className="container mx-auto px-4 h-14 md:h-16 flex items-center justify-between relative">
           {/* Logo */}
           <Link to="/" className="relative z-[70]">
             <img 
               src="https://i.postimg.cc/QMzyyHYv/logo-transp.png" 
               alt="MM Construções" 
-              className="h-8 md:h-10 w-auto"
+              className="h-7 md:h-8 w-auto"
             />
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-10">
+          <nav className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`text-sm font-bold uppercase tracking-widest transition-all hover:text-[#FFB300] ${
+                className={`text-xs font-bold uppercase tracking-widest transition-all hover:text-[#FFB300] ${
                   currentPath === link.path ? 'text-[#FFB300]' : 'text-white'
                 }`}
               >
@@ -71,7 +71,7 @@ export default function Header() {
           <div className="hidden md:block relative z-[70]">
             <Link 
               to="/contato" 
-              className="bg-[#FFB300] text-[#0B1D3A] px-6 py-2.5 rounded-lg font-black text-xs uppercase tracking-widest hover:scale-105 transition-transform shadow-lg"
+              className="bg-[#FFB300] text-[#0B1D3A] px-5 py-2 rounded-lg font-black text-[10px] uppercase tracking-widest hover:scale-105 transition-transform shadow-lg"
             >
               Orçamento
             </Link>
@@ -83,7 +83,7 @@ export default function Header() {
             className="md:hidden relative z-[70] p-2 text-white hover:text-[#FFB300] transition-colors"
             aria-label="Menu"
           >
-            {isMenuOpen ? <X size={30} /> : <Menu size={30} />}
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </header>
