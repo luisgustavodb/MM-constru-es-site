@@ -29,7 +29,7 @@ export default function Products() {
   const [showMobileFilters, setShowMobileFilters] = useState(false);
 
   return (
-    <div className="pt-24 bg-gray-50 min-h-screen">
+    <div className="pt-32 md:pt-40 bg-gray-50 min-h-screen">
       {/* Catálogo de Produtos Section */}
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-4 max-w-7xl">

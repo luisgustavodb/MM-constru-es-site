@@ -33,7 +33,7 @@ export default function Header() {
   return (
     <>
       {/* HEADER PRINCIPAL */}
-      <header className="fixed top-0 left-0 w-full z-[60] bg-[#0B1D3A] shadow-xl border-b border-white/5">
+      <header className="fixed top-0 left-0 w-full z-[60] bg-[#0B1D3A]/80 backdrop-blur-md shadow-xl border-b border-white/5">
         {/* Faixa Superior */}
         <div className="bg-[#061225] py-1.5 px-4 text-center">
           <p className="text-[9px] md:text-xs font-bold text-blue-200 uppercase tracking-[0.2em]">
@@ -90,7 +90,7 @@ export default function Header() {
 
       {/* MENU MOBILE (OVERLAY) */}
       <div 
-        className={`fixed inset-0 z-[55] bg-[#0B1D3A] transition-all duration-500 ease-in-out md:hidden ${
+        className={`fixed inset-0 z-[55] bg-[#0B1D3A]/90 backdrop-blur-xl transition-all duration-500 ease-in-out md:hidden ${
           isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
         }`}
       >
@@ -149,8 +149,7 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Espaçador para o Header Fixo */}
-      <div className="h-[76px] md:h-[96px]"></div>
+      {/* O espaçador foi removido para permitir que o Hero suba atrás do Header */}
     </>
   );
 }

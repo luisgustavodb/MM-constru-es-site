@@ -60,7 +60,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="pt-24 md:pt-32 pb-16 md:pb-24 bg-white min-h-screen">
+    <div className="pt-32 md:pt-44 pb-16 md:pb-24 bg-white min-h-screen">
       <div className="container mx-auto px-4 max-w-6xl">
         
         {/* Header */}
